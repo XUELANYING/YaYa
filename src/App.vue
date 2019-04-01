@@ -1,25 +1,29 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
+    <Foot/>
   </div>
 </template>
-<style lang="stylus">
-#app
-  font-family 'Avenir', Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
+<script>
+    import Foot from './common/tabbar/index'
 
-#nav
-  padding 30px
-  a
-    font-weight bold
-    color #2c3e50
-    &.router-link-exact-active
-      color #42b983
+    import Search from './views/search'
+
+    export default {
+        components: {
+            Foot,
+            Search
+        }
+    }
+</script>
+<style>
+  #app, .container {
+    height: 100%;
+    width: 100%;
+  }
+
+  .container {
+    padding-top: 1.88rem;
+    padding-bottom: 0.88rem;
+  }
 </style>
